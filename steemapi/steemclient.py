@@ -147,6 +147,11 @@ class SteemClient() :
             # Make a reference to 'node'
             self.node = self.ws
 
+        if "market_separator" in available_features:
+            self.market_separator = config.market_separator
+        else:
+            self.market_separator = ":"
+
     def getObject(self, oid):
         """ Get an Object either from Websocket store (if available) or
             from RPC connection.
